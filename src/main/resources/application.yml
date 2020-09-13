@@ -1,0 +1,74 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: Order
+          uri: http://localhost:8081
+          predicates:
+            - Path=/orders/** 
+        - id: Management
+          uri: http://localhost:8082
+          predicates:
+            - Path=/managements/** 
+        - id: Driver
+          uri: http://localhost:8083
+          predicates:
+            - Path=/drivers/** 
+        - id: orderStatus
+          uri: http://localhost:8084
+          predicates:
+            - Path= /orderStatuses/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: Order
+          uri: http://Order:8080
+          predicates:
+            - Path=/orders/** 
+        - id: Management
+          uri: http://Management:8080
+          predicates:
+            - Path=/managements/** 
+        - id: Driver
+          uri: http://Driver:8080
+          predicates:
+            - Path=/drivers/** 
+        - id: orderStatus
+          uri: http://orderStatus:8080
+          predicates:
+            - Path= /orderStatuses/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
