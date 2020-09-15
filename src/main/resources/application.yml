@@ -44,19 +44,19 @@ spring:
     gateway:
       routes:
         - id: a-order
-          uri: http://Order:8080
+          uri: http://a-order:8080
           predicates:
             - Path=/orders/** 
-        - id: Management
-          uri: http://Management:8080
+        - id: a-management
+          uri: http://a-management:8080
           predicates:
             - Path=/managements/** 
         - id: a-driver
           uri: http://a-driver:8080
           predicates:
             - Path=/drivers/** 
-        - id: orderStatus
-          uri: http://orderStatus:8080
+        - id: a-orderstatus
+          uri: http://a-orderstatus:8080
           predicates:
             - Path= /orderStatuses/**
       globalcors:
