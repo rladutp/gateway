@@ -3,8 +3,8 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "a-driver"
-    _PROJECT_NAME: "a-driver"
+    IMAGE_REPO_NAME: "a-gateway"
+    _PROJECT_NAME: "a-gateway"
 
 phases:
   install:
