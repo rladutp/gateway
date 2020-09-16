@@ -24,6 +24,14 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path= /orderStatuses/**
+        - id: HR
+          uri: http://localhost:8085
+          predicates:
+            - Path=/hrs/**
+        - id: Hrview
+          uri: http://localhost:8086
+          predicates:
+            - Path= /hrpages/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -43,22 +51,30 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: Order
-          uri: http://Order:8080
+        - id: a-order
+          uri: http://a-order:8080
           predicates:
             - Path=/orders/** 
-        - id: Management
-          uri: http://Management:8080
+        - id: a-management
+          uri: http://a-management:8080
           predicates:
             - Path=/managements/** 
-        - id: Driver
-          uri: http://Driver:8080
+        - id: a-driver
+          uri: http://a-driver:8080
           predicates:
             - Path=/drivers/** 
-        - id: orderStatus
-          uri: http://orderStatus:8080
+        - id: a-orderstatus
+          uri: http://a-orderstatus:8080
           predicates:
             - Path= /orderStatuses/**
+        - id: HR
+          uri: http://HR:8080
+          predicates:
+            - Path=/hrs/**
+        - id: Hrview
+          uri: http://Hrview:8080
+          predicates:
+            - Path= /hrpages/**
       globalcors:
         corsConfigurations:
           '[/**]':

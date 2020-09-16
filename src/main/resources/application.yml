@@ -24,6 +24,14 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path= /orderStatuses/**
+        - id: HR
+          uri: http://localhost:8085
+          predicates:
+            - Path=/hrs/**
+        - id: Hrview
+          uri: http://localhost:8086
+          predicates:
+            - Path= /hrpages/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -59,6 +67,14 @@ spring:
           uri: http://a-orderstatus:8080
           predicates:
             - Path= /orderStatuses/**
+        - id: HR
+          uri: http://HR:8080
+          predicates:
+            - Path=/hrs/**
+        - id: Hrview
+          uri: http://Hrview:8080
+          predicates:
+            - Path= /hrpages/**
       globalcors:
         corsConfigurations:
           '[/**]':

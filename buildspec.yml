@@ -3,8 +3,8 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "a-gateway"
-    _PROJECT_NAME: "a-gateway"
+    IMAGE_REPO_NAME: "dh-gateway"
+    _PROJECT_NAME: "dh-gateway"
 
 phases:
   install:
