@@ -51,28 +51,28 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: a-order
-          uri: http://a-order:8080
+        - id: dh-order
+          uri: http://dh-order:8080
           predicates:
             - Path=/orders/** 
-        - id: a-management
-          uri: http://a-management:8080
+        - id: dh-management
+          uri: http://dh-management:8080
           predicates:
             - Path=/managements/** 
-        - id: a-driver
-          uri: http://a-driver:8080
+        - id: dh-driver
+          uri: http://dh-driver:8080
           predicates:
             - Path=/drivers/** 
-        - id: a-orderstatus
-          uri: http://a-orderstatus:8080
+        - id: dh-orderstatus
+          uri: http://dh-orderstatus:8080
           predicates:
             - Path= /orderStatuses/**
-        - id: HR
-          uri: http://HR:8080
+        - id: dh-hr
+          uri: http://dh-hr:8080
           predicates:
             - Path=/hrs/**
-        - id: Hrview
-          uri: http://Hrview:8080
+        - id: dh-hrview
+          uri: http://dh-hrview:8080
           predicates:
             - Path= /hrpages/**
       globalcors:
